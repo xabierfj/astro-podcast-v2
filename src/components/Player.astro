@@ -1,0 +1,24 @@
+---
+import PlayerCurrentSong from './PlayerCurrentSong.astro'
+import PlayerControlButtonBar from './PlayerControlButtonBar.astro'
+import PlayerSoundControl from './PlayerSoundControl.astro'
+import PlayerVolumeControl from './PlayerVolumeControl.astro'
+
+
+---
+<div class="flex flex-row justify-between w-full px-1 z-50">
+  <div class="w-[200px]">
+    <PlayerCurrentSong  />
+  </div>
+
+  <div class="grid place-content-center gap-4 flex-1">
+    <div class="flex justify-center flex-col items-center">
+      <PlayerControlButtonBar/>
+      <PlayerSoundControl />
+    </div>
+  </div>
+
+  <div class="grid place-content-center">
+    <PlayerVolumeControl/>
+  </div>
+</div>

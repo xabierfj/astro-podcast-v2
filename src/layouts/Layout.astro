@@ -1,4 +1,6 @@
 ---
+import Player from '../components/Player.astro'
+import AsideInfo from '../components/AsideInfo.astro'
 import './src/styles/global.css'
 
 interface Props {
@@ -23,11 +25,13 @@ const { title = "Protelario y Parasito" } = Astro.props
 	<body class="w-screen overflow-x-hidden scroll-smooth">
 		<div id="app" class="relative h-screen p-2 gap-2">
 			<aside class="[grid-area:aside] flex-col flex overflow-y-auto bg-zinc-300">
+				<AsideInfo />
 			</aside>
 			<main class="[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto w-full" >
 				<slot />
 			</main>
 			<footer class="[grid-area:player] h-[80px]">
+				<Player />
 			</footer>
 		</div>
 	</body>
