@@ -24,10 +24,10 @@ const { title = "Protelario y Parasito" } = Astro.props
 	</head>
 	<body class="w-screen overflow-x-hidden scroll-smooth">
 		<div id="app" class="relative h-screen p-2 gap-2">
-			<aside class="[grid-area:aside] flex-col flex overflow-y-auto bg-zinc-300">
+			<aside class="[grid-area:aside] rounded-lg flex-col flex overflow-y-auto bg-theme-test-bg">
 				<AsideInfo />
 			</aside>
-			<main class="[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto w-full" >
+			<main class="[grid-area:main] rounded-lg overflow-y-auto w-full bg-theme-test-accent" >
 				<slot />
 			</main>
 			<footer class="[grid-area:player] h-[80px]">
