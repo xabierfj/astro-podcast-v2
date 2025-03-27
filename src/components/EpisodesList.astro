@@ -1,17 +1,19 @@
 ---
 import { episodes } from "../lib/rss-reader";
-import { Truncate } from "../lib/utils";
+const { episodesToShow = [] } = Astro.props;
 import EpisodeItem from "./EpisodeItem.astro";
 
-const olderEpisodes = episodes.length > 1 ? episodes.slice(1) : [];
+console.log(episodesToShow, "episodesToShow");
+
+const olderEpisodes = episodesToShow.length;
 
 ---
 
 <div class="overflow-hidden mx-5">
   <ul aria-label="Episodios">
-    <li class="border-b dark:border-dark-border">
+    <li>
       {
-        olderEpisodes.map((episode) => (
+        episodesToShow.map((episode: { title: unknown; description: unknown; image: unknown; publishDate: unknown; enclosure: { url: unknown; }; duration: unknown; slug: unknown; }) => (
           <EpisodeItem
             title={episode.title}
             description={episode.description}

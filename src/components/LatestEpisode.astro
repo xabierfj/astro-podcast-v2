@@ -1,10 +1,8 @@
 ---
-import { episodes } from "../lib/rss-reader";
-import { Truncate } from "../lib/utils";
+const { episode } = Astro.props
 
 const createUrl = (slug: string | undefined) => slug;
 
-const episode = episodes.length > 0 ? episodes[0] : null;
 const episodeImage = episode?.image ?? episode?.image;
 const episodeLink = createUrl(episode?.slug) ?? episode?.enclosure.url ?? "#"; // Ensure a fallback href
 ---
