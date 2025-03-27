@@ -1,29 +1,33 @@
 ---
-import { episodes } from "../lib/rss-reader";
 const { episodesToShow = [] } = Astro.props;
 import EpisodeItem from "./EpisodeItem.astro";
-
-console.log(episodesToShow, "episodesToShow");
-
-const olderEpisodes = episodesToShow.length;
-
 ---
 
 <div class="overflow-hidden mx-5">
   <ul aria-label="Episodios">
     <li>
       {
-        episodesToShow.map((episode: { title: unknown; description: unknown; image: unknown; publishDate: unknown; enclosure: { url: unknown; }; duration: unknown; slug: unknown; }) => (
-          <EpisodeItem
-            title={episode.title}
-            description={episode.description}
-            image={episode.image}
-            date={episode.publishDate}
-            media={episode.enclosure.url}
-            duration={episode.duration}
-            slug={episode.slug}
-          />
-        ))
+        episodesToShow.map(
+          (episode: {
+            title: string;
+            description: string;
+            image: string;
+            publishDate: string;
+            enclosure: { url: string };
+            duration: string;
+            slug: string;
+          }) => (
+            <EpisodeItem
+              title={episode.title}
+              description={episode.description}
+              image={episode.image}
+              date={episode.publishDate}
+              media={episode.enclosure.url}
+              duration={episode.duration}
+              slug={episode.slug}
+            />
+          )
+        )
       }
     </li>
   </ul>
