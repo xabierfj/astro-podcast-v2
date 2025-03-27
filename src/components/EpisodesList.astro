@@ -1,0 +1,24 @@
+---
+import { episodes } from "../lib/rss-reader";
+import { Truncate } from "../lib/utils";
+import EpisodeItem from "./EpisodeItem.astro";
+
+---
+
+<ul aria-label="Episodios">
+  <li class="border-b dark:border-dark-border">
+    {
+      episodes.map((episode) => (
+        <EpisodeItem 
+          title={episode.title} 
+          description={episode.description} 
+          image={episode.image} 
+          date={episode.publishDate}
+          media={episode.enclosure.url}
+          duration={episode.duration}
+          slug={episode.slug}
+            />
+      ))
+    }
+  </li>
+</ul>
