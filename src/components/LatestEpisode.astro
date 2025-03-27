@@ -1,0 +1,29 @@
+---
+import { episodes } from "../lib/rss-reader";
+import { Truncate } from "../lib/utils";
+
+console.log(episodes[0]);
+---
+
+<div class="container">
+  <article class="flex w-full flex-col lg:flex-row p-1">
+    <div class="mx-2">
+      <img src={episodes[0].image} alt={episodes[0].title} width="350" height="350" class="rounded-lg"/>
+    </div>
+    <div>
+      <div>
+        <h2 class="mt-2 text-lg font-bold text-light-text-heading">
+          <a href={`/${episodes[0].slug}`}></a>
+          {episodes[0].title}
+        </h2>
+        <div class="text-xs font-bold uppercase tracking-wide">
+          <time>{episodes[0].publishDate}</time> • {episodes[0].duration}
+        </div>
+        <p class="post__description">
+          {Truncate(episodes[0].description, 200)}
+        </p>
+        <a href={`/${episodes[0].slug}`} class="button button-light">Escuchar ahora</a>
+      </div>
+    </div>
+  </article>
+</div>
