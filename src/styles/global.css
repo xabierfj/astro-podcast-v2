@@ -1,10 +1,8 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --color-theme-dark: #303b4c;
   --color-theme-brown: #e1dab2;
   --color-theme-red: #f05d26;
-
-  --color-theme-test-bg: #421b42;
-  --color-theme-test-accent: #cf7a4d;
 }
