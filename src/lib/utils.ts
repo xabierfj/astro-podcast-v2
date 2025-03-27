@@ -22,7 +22,7 @@ export function Truncate(str: any, length: number) {
   } else return sanitizedString;
 }
 
-export default function FormattedDate(date: string) {
+export function FormattedDate(date: string) {
   return new Date(date).toLocaleDateString('es-es', {
     year: 'numeric',
     month: 'short',
