@@ -13,15 +13,15 @@ const episodeLink = createUrl(episode?.slug) ?? episode?.enclosure.url ?? "#"; /
   episode && (
     <section class="bg-theme-red rounded-lg shadow-lg overflow-hidden mx-5">
       <article class="flex flex-col md:flex-row p-4 md:p-6 gap-4 md:gap-6 items-start">
-        <div class="w-full md:w-1/3 lg:w-1/4 flex-shrink-0 mx-auto md:mx-0">
+        <div class="flex-shrink-0 mx-auto md:mx-0 w-[160px]">
           <a href={episodeLink} aria-label={`Escucha ${episode.title}`}>
             <img
               src={episodeImage}
               alt={`image de ${episode.title}`}
-              class="w-full h-auto max-w-xs md:max-w-full mx-auto rounded-lg shadow-md aspect-[1/1] object-cover"
+              class="w-full h-auto md:max-w-full mx-auto rounded-lg shadow-md  object-cover"
               loading="lazy"
-              width="350"
-              height="350"
+              width="160"
+              height="160"
             />
           </a>
         </div>

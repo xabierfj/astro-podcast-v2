@@ -3,28 +3,41 @@
 const { title, slug, description, date, media, duration, image } = Astro.props
 
 ---
-<div class="flex w-full flex-col py-10 lg:flex-row">
-  <img 
-    src={image} 
-    alt={title}
-    aria-hidden="true"
-    class="mb-3 block h-24 w-24 rounded-md lg:mr-6"
-    height="80"
-    width="80"
-  />
-  <div class="flex flex-col">
-      <time class="text-[1rem]" datetime={date}> 
-        {date}
-      </time>
-     <h2 class="my-2 text-lg font-bold text-light-text-heading dark:text-text-bg">
-       <a href="#">
-        {title}
-       </a>
-     </h2>
-     <p class="mb-5">{description}</p>
-     <div class="flex items-center gap-6 text-sm">
-        <a href="#" class="font-bold text-light-text-heading dark:text-text-bg">Mostrar Notas</a>
-     </div>
-     <!-- <p class="my-2 text-lg font-bold text-light-text-heading dark:text-text-bg">Episodio de refencia: 04x02: Pa' loca tu calva</p> -->
+<div>
+  <div class="flex items-center justify-center max-w-[80rem] gap-4 p-4">
+    <a href={slug} class="flex-shrink-0"> {/* Use flex-shrink-0 */}
+      <img
+        src={image}
+        alt={title}
+        class="shadow-lg rounded-md w-[4.5rem] h-[4.5rem] md:w-24 md:h-24 object-cover"
+        width="96"
+        height="96"
+        loading="lazy" 
+      />
+    </a>
+    <div class="grow w-full overflow-hidden min-w-0">
+      <a href={slug}>
+        <h2 class="text-sm md:text-xl font-semibold truncate">
+          {title}
+        </h2>
+        <p class="text-xs font-medium opacity-60">
+          <span class="duration">{duration}</span>
+          <span class="mx-1">•</span>
+          <time class="date">{date}</time>
+        </p>
+        <p class="my-1 text-xs md:text-sm line-clamp-2">
+          {description}
+        </p>
+      </a>
+    </div>
+    <label class="flex-shrink-0">
+      <div class="fill-current">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-play-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" stroke-width="0" fill="currentColor"></path>
+        </svg>
+      </div>
+    </label>
   </div>
+  <hr class="my-3 border-theme-red opacity-65" /> 
 </div>
