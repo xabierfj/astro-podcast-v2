@@ -13,12 +13,12 @@ const archivePageUrl = "/episodios/";
 ---
 
 <Layout>
-  <div class="grid grid-rows-[auto_1fr] scrollbar-thin overflow-y-auto h-full">
+  <div class="grid grid-rows-[auto_1fr] h-full">
     <div class="row-span-1 flex flex-col justify-center">
       <h1 class="text-center text-xl text-theme-test-accent">Ultimo Episodio</h1>
       <LatestEpisode episode={latestEpisode} />
     </div>
-    <div class="row-span-1">
+    <div class="row-span-1 overflow-y-auto scrollbar-thin min-h-0">
       <EpisodesList episodesToShow={recentOlderEpisodes} />
 			<div class="text-center my-2.5">
 				<a href={archivePageUrl} class="px-6 py-3 bg-theme-dark text-theme-brown hover:text-theme-red text-base font-semibold rounded-md">
