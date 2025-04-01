@@ -16,7 +16,6 @@ const { title = "Protelario y Parasito" } = Astro.props
     <title>{title}</title>
     <meta name="description" content="El podcast que no predijeron los simpsons" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title>
     <meta property="og:title" content="Protelario y Parasito">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
@@ -24,7 +23,7 @@ const { title = "Protelario y Parasito" } = Astro.props
 	</head>
 	<body class="w-screen overflow-x-hidden scroll-smooth">
 		<div id="app" class="relative h-screen p-2 gap-2">
-			<aside class="[grid-area:aside] rounded-lg flex-col flex overflow-y-auto bg-theme-test-bg">
+			<aside class="[grid-area:aside] rounded-lg flex-col flex overflow-y-auto bg-theme-test-bg bg-theme-dark">
 				<AsideInfo />
 			</aside>
 			<main class="[grid-area:main] rounded-lg overflow-y-auto w-full bg-theme-dark" >

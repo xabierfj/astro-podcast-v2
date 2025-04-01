@@ -1,24 +1,16 @@
 ---
-import PlayerCurrentSong from './PlayerCurrentSong.astro'
-import PlayerControlButtonBar from './PlayerControlButtonBar.astro'
-import PlayerSoundControl from './PlayerSoundControl.astro'
-import PlayerVolumeControl from './PlayerVolumeControl.astro'
-
-
+const trackData = {
+  title: "Bohemian Rhapsody (Or a very very long title indeed to test things out)",
+  artist: "Queen",
+  albumArtUrl: "https://via.placeholder.com/56/cccccc/000000?text=Queen",
+  durationSeconds: 355,
+};
 ---
-<div class="flex flex-row justify-between w-full px-1 z-50">
-  <div class="w-[200px]">
-    <PlayerCurrentSong  />
+<div class="grid grid-cols-[minmax(180px,auto)_1fr_minmax(120px,auto)] items-center gap-x-4 w-full">
+  <div class="bg-blue-800">
   </div>
-
-  <div class="grid place-content-center gap-4 flex-1">
-    <div class="flex justify-center flex-col items-center">
-      <PlayerControlButtonBar/>
-      <PlayerSoundControl />
-    </div>
+  <div class="bg-blue-500">
   </div>
-
-  <div class="grid place-content-center">
-    <PlayerVolumeControl/>
+  <div class="bg-blue-200">
   </div>
 </div>

@@ -1,5 +1,5 @@
 ---
-
+import podcastInfo from '../lib/podcast-info'
 ---
 
 <header class="col-span-1 flex scrollbar-thin items-start overflow-y-auto"> 
@@ -7,5 +7,48 @@
     <div class="w-48 overflow-hidden rounded-lg sm:w-64 sm:rounded-xl lg:w-auto lg:rounded-2xl">
       <img class="w-full" src="./logo.webp" alt="" />
     </div>
+    <div class="sm:px-6 md:px-4 lg:px-8">
+      <p class="mt-4 text-center text-2xl font-bold lg:text-left dark:text-white">
+        {podcastInfo.title}
+      </p>
+      <p class="mt-2 text-center text-lg lg:text-left">
+        {podcastInfo.description}
+      </p>
+    </div>
+    <div class="sm:px-6 md:px-4 lg:px-8">
+      <h3 class="section-heading lg:block text-2xl dark:text-text-bg">Redes</h3>
+    </div>
+    <div class="sm:px-6 md:px-4 lg:px-8">
+      <h3 class="section-heading text-2xl lg:block dark:text-text-bg">Presentado por</h3>
+    </div>
   </div>
 </header>
+
+<!-- 
+<header class="col-span-1 flex scrollbar-thin items-start overflow-y-auto"> 
+  <div class="mx-auto lg:min-h-full flex lg:flex-col">
+    <div class="py-4 px-4 rounded-lg bg-test dark:bg-test">
+      <div class="sm:px-6 md:px-4 lg:px-8 pt-3">
+        <div class="w-48 overflow-hidden rounded-lg sm:w-64 sm:rounded-xl lg:w-auto lg:rounded-2xl">
+          <img class="w-full" src="../images/logo.webp" alt="" />
+        </div>
+      </div>
+      <div class="sm:px-6 md:px-4 lg:px-8">
+        <p class="mt-4 text-center text-2xl font-bold lg:text-left dark:text-white">
+          {podcastInfo.title}
+        </p>
+        <p class="mt-2 text-center text-lg lg:text-left">
+          {podcastInfo.description}
+        </p>
+      </div>
+      <div class="sm:px-6 md:px-4 lg:px-8">
+        <h3 class="section-heading lg:block text-2xl dark:text-text-bg">Escuchanos</h3>
+          <Platforms />
+      </div>
+      <div class="sm:px-6 md:px-4 lg:px-8">
+        <h3 class="section-heading text-2xl lg:block dark:text-text-bg">Presentado por</h3>
+          <Hosts />
+      </div>
+    </div>
+  </div>
+</header> -->
