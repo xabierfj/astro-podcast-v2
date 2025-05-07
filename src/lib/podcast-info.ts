@@ -4,7 +4,7 @@ export type Host = {
   bluesky: string;
 }
 
-export type PodscastInfo = {
+export type PodcastInfo = {
   title: string; 
   description: string;
   hosts: Array<Host>;
@@ -18,7 +18,7 @@ export type PodscastInfo = {
   rssFeed: string;
 }
 
-export const podcastInfo = (config: PodscastInfo) => config;
+export const podcastInfo = (config: PodcastInfo) => config;
 
 export default podcastInfo({
   title:'Proletario y Parasito',
@@ -26,12 +26,12 @@ export default podcastInfo({
   hosts: [
     {
       name: 'Carlos Noroeste',
-      img: "./carlos.webp",
+      img: "/carlos.webp",
       bluesky: 'https://bsky.app/profile/carlosnoroeste.bsky.social',
     },
     {
       name: 'Alberto Graupera',
-      img: "./alberto.webp",
+      img: "/alberto.webp",
       bluesky: 'https://bsky.app/profile/albertograupera.bsky.social',
     }
   ],
