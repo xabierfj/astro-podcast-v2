@@ -1,15 +1,13 @@
 ---
 import podcastInfo from '../lib/podcast-info'
-import SpotifyIcon from '../icons/SpotifyIcon.astro'; // Adjust path if needed
-import IvooxIcon from '../icons/IvooxIcon.astro';   // Adjust path if needed
 ---
 
 <div class="flex flex-col h-full p-4 md:p-6 scrollbar-thin"> 
-  <div class="text-center mb-6">
+  <div class="text-center mb-2">
     <div class="w-48 sm:w-48 md:w-56 mx-auto mb-4 overflow-hidden rounded-lg shadow-lg">
       <img class="w-full h-auto" src='/logo.webp'alt={`${podcastInfo.title} Logo`} />
     </div>
-    <h1 class="text-2xl md:text-3xl font-bold text-theme-red dark:text-white">
+    <h1 class="text-2xl md:text-2xl font-bold text-theme-red dark:text-white">
       {podcastInfo.title}
     </h1>
     <p class="mt-2 text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -18,17 +16,16 @@ import IvooxIcon from '../icons/IvooxIcon.astro';   // Adjust path if needed
   </div>
 
   {(podcastInfo.platforms.spotify || podcastInfo.platforms.ivox) && (
-    <div class="mb-6">
+    <div class="mb-2">
       <h2 class="text-xl font-semibold mb-3 text-gray-700 dark:text-gray-200">Escúchanos en</h2>
-      <div class="flex flex-row space-x-4"> {/* Flex row for icons */}
+      <div class="flex flex-row space-x-4 join">
         {podcastInfo.platforms.spotify && (
-          <a 
+          <a
             href={podcastInfo.platforms.spotify} 
             target="_blank" 
             rel="noopener noreferrer" 
             aria-label="Listen on Spotify"
-            class="text-gray-400 hover:text-spotify-green dark:text-gray-300 dark:hover:text-spotify-green transition-colors"
-          >
+            class="rounded-md bg-theme-red py-2 px-4 border border-transparent text-center text-sm text-theme-brown transition-all shadow-md hover:shadow-lg focus:shadow-none active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
             Spotify
           </a>
         )}
@@ -38,17 +35,13 @@ import IvooxIcon from '../icons/IvooxIcon.astro';   // Adjust path if needed
             target="_blank" 
             rel="noopener noreferrer" 
             aria-label="Listen on iVoox"
-            class="text-gray-400 hover:text-ivoox-orange dark:text-gray-300 dark:hover:text-ivoox-orange transition-colors"
-          >
+            class="rounded-md bg-theme-red py-2 px-4 border border-transparent text-center text-sm text-theme-brown transition-all shadow-md hover:shadow-lg focus:shadow-none active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
             Ivoox
           </a>
         )}
-        {/* Add other listening platforms with icons similarly */}
       </div>
     </div>
   )}
-
-    <!-- Hosts / Presentado por -->
     {podcastInfo.hosts && podcastInfo.hosts.length > 0 && (
       <div class="mb-6">
         <h2 class="text-xl font-semibold mb-3 text-gray-700 dark:text-gray-200">Presentado por</h2>
@@ -73,7 +66,7 @@ import IvooxIcon from '../icons/IvooxIcon.astro';   // Adjust path if needed
     )}
   
   {(podcastInfo.platforms.bluesky || podcastInfo.platforms.instagram || podcastInfo.platforms.kofi) && (
-    <div class="mb-6"> {/* Or mt-auto to push to bottom if content is short */}
+    <div class="mb-6">
       <h2 class="text-xl font-semibold mb-3 text-gray-700 dark:text-gray-200">Síguenos / Apóyanos</h2>
       <ul class="space-y-2">
         {podcastInfo.platforms.bluesky && (
@@ -92,7 +85,5 @@ import IvooxIcon from '../icons/IvooxIcon.astro';   // Adjust path if needed
 
 <style>
   .hover\:text-spotify-green:hover { color: #1DB954; }
-  .dark\:hover\:text-spotify-green:hover { color: #1DB954; } /* Or a lighter green for dark mode */
   .hover\:text-ivoox-orange:hover { color: #FF6600; }
-  .dark\:hover\:text-ivoox-orange:hover { color: #FF6600; } /* Or a lighter orange for dark mode */
 </style>
