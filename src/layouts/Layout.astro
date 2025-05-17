@@ -35,7 +35,7 @@ const {
 				<slot />
 			</main>
 			<footer class="[grid-area:player] h-[80px]">
-        <Player client:load transition:name="media-player" transition:persist/>
+        <Player client:only="react" />
       </footer>
 		</div>
 	</body>

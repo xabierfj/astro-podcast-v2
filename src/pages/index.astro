@@ -1,16 +1,10 @@
 ---
 import LatestEpisode from "@/components/LatestEpisode.astro";
-
 import Layout from "../layouts/Layout.astro";
-import EpisodesList from "@/components/EpisodesList.astro";
 import { episodes as allEpisodesData } from "../lib/rss-reader";
 
 const latestEpisode = allEpisodesData.length > 0 ? allEpisodesData[0] : null;
 
-const NUM_RECENT_ON_INDEX = 3;
-const recentOlderEpisodes = allEpisodesData.length > 1 ? allEpisodesData.slice(1, 1 + NUM_RECENT_ON_INDEX) : [];
-
-const archivePageUrl = "/episodios/";
 ---
 
 <Layout>
@@ -19,12 +13,6 @@ const archivePageUrl = "/episodios/";
       <LatestEpisode episode={latestEpisode} />
     </div>
     <div class="row-span-1 overflow-y-auto scrollbar-thin min-h-0">
-      <EpisodesList episodesToShow={recentOlderEpisodes} />
-      <div class="text-center my-2.5">
-        <a href={archivePageUrl} class="px-6 py-3 bg-theme-dark text-theme-brown hover:text-theme-red text-base font-semibold rounded-md">
-          Ver todos los episodios →
-        </a>
-      </div>
     </div>
   </div>
 </Layout>
