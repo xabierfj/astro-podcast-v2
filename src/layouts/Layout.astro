@@ -5,7 +5,7 @@ import './src/styles/global.css'
 
 interface Props {
   title?: string;
-  description?: string; // Added for meta description
+  description?: string;
 }
 
 const { 
@@ -28,14 +28,14 @@ const {
 	</head>
 	<body class="w-screen overflow-x-hidden scroll-smooth">
 		<div id="app" class="relative h-screen p-2 gap-2">
-			<aside class="[grid-area:aside] rounded-lg flex-col flex overflow-y-auto bg-theme-test-bg bg-theme-dark">
+			<aside class="[grid-area:aside] rounded-lg flex-col flex overflow-y-auto bg-theme-test-bg bg-theme-background scrollbar-thin">
 				<AsideInfo />
 			</aside>
-			<main class="[grid-area:main] rounded-lg overflow-y-auto w-full bg-theme-dark" >
+			<main class="[grid-area:main] rounded-lg overflow-y-auto w-full bg-theme-background" >
 				<slot />
 			</main>
-			<footer class="[grid-area:player] h-[80px]">
-        <Player client:only="react" />
+			<footer class="[grid-area:player] h-[80px] bg-theme-background rounded-lg">
+        <!-- <Player client:only="react"  /> -->
       </footer>
 		</div>
 	</body>
