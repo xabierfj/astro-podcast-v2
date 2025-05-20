@@ -12,7 +12,14 @@ const { href, label } = Astro.props;
   target="_blank"
   rel="noopener noreferrer"
   aria-label={`Listen on ${label}`}
-  class="rounded-md bg-theme-red py-2 px-4 border border-transparent text-center text-sm text-theme-brown transition-all shadow-md hover:shadow-lg focus:shadow-none active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+  class:list={[
+    "rounded-md py-2 px-4 border border-transparent text-center text-sm font-medium",
+    "transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2",
+    "disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none",
+    "bg-theme-accent text-theme-background", // Main theme colors
+    "hover:bg-theme-primary", // Hover state using another theme color
+    "focus:ring-theme-primary focus:ring-offset-theme-background" // Focus state
+  ]}
 >
   {label}
 </a>
